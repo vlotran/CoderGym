@@ -839,6 +839,54 @@
             "requirements": {
                 "validation": "AUC/AP reported with deterministic sampling."
             }
+        },
+        {
+            "series": "Logistic Regression",
+            "level": 5,
+            "id": "logreg_breast_cancer",
+            "algorithm": "Logistic Regression",
+            "description": "Binary logistic regression on Wisconsin breast cancer dataset",
+            "interface_protocol": "pytorch_task_v1",
+            "requirements": {
+                "data": "sklearn.datasets.load_breast_cancer",
+                "validation": "Accuracy > 0.90, F1 > 0.85"
+            }
+        },
+        {
+            "series": "Logistic Regression",
+            "level": 6,
+            "id": "softmax_iris_multiclass",
+            "algorithm": "Softmax Regression",
+            "description": "Multi-class classification using softmax regression on Iris dataset",
+            "interface_protocol": "pytorch_task_v1",
+            "requirements": {
+                "data": "sklearn.datasets.load_iris",
+                "validation": "Accuracy > 0.85, Macro-F1 > 0.85"
+            }
+        },
+        {
+            "series": "Linear Regression",
+            "level": 7,
+            "id": "linreg_housing_l2",
+            "algorithm": "Ridge Regression",
+            "description": "Linear regression with L2 regularization (Ridge) on California Housing dataset",
+            "interface_protocol": "pytorch_task_v1",
+            "requirements": {
+                "data": "sklearn.datasets.fetch_california_housing",
+                "validation": "R\u00b2 > 0.5, MSE < 2.0"
+            }
+        },
+        {
+            "series": "Logistic Regression",
+            "level": 8,
+            "id": "logreg_lr_scheduler",
+            "algorithm": "Logistic Regression with StepLR Scheduler",
+            "description": "Logistic regression with learning rate scheduler on synthetic data",
+            "interface_protocol": "pytorch_task_v1",
+            "requirements": {
+                "data": "synthetic (sklearn.make_classification)",
+                "validation": "Accuracy > 0.80, LR decreases over time"
+            }
         }
     ]
 }
